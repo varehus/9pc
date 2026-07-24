@@ -1,0 +1,17 @@
+9P for C#
+
+This is a Monodevelop project directoy you can copy into ~/Projects
+and just build from inside Monodevelop. It contains a rudimentary
+implementation of the 9P protocol of Plan 9 from Bell Labs[0] for C#.
+
+The complete parsing of 9P packages and stat structs is implemented
+and some examples can be seen in the Main() function at the end of
+Main.cs. Adding functions, like doremove() or docreate() is as easy as
+looking up the values you need in the manual pages of Plan 9[1].
+
+Have fun using it,
+
+Christoph Lohmann
+
+[0] http://www.cs.bell-labs.com/plan9dist
+[1] intro(5) and fcall.h in Plan 9
