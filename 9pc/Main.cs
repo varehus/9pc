@@ -4,6 +4,7 @@
  */
 
 using System;
+using System.Runtime.Serialization;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -127,12 +128,14 @@ namespace ninepc
 		public Byte[] stat;
 	}
 	
+	[Serializable]
 	class ninepexception : Exception
 	{
 		public ninepexception(string str)
 		{
 			Console.WriteLine("9P error: {0}", str);
 		}
+		protected ninepexception(SerializationInfo info, StreamingContext context) : base(info, context) {}
 	}
 	
 	class ninep
