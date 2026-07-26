@@ -1,5 +1,6 @@
 2026-07-26
 
+	* .gitignore: Added to permanently ignore MonoDevelop parser databases.
 	* 9pc/9pc.pidb: Removed.
 
 2017-06-03
