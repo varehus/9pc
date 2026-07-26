@@ -212,7 +212,7 @@ namespace ninepc
 			fin = new Fcall();
 			pktin = new Byte[mmsgsz];
 			
-			iphost = Dns.Resolve(host);
+			iphost = Dns.GetHostEntry(host);
 			addr = iphost.AddressList;
 			ep = new IPEndPoint(addr[0], port);
 			
