@@ -138,9 +138,10 @@ namespace ninepc
 		protected ninepexception(SerializationInfo info, StreamingContext context) : base(info, context) {}
 	}
 	
-	class ninep
+	class ninep : IDisposable
 	{
 		Socket sock;
+		private bool _disposed = false;
 		public Fcall fin;
 		public Fcall fout;
 		
@@ -229,6 +230,25 @@ namespace ninepc
 			sock.Shutdown(SocketShutdown.Both);
 			sock.Close();
 			Console.WriteLine("Disconnected");
+		}
+
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
+
+		protected virtual void Dispose(bool disposing)
+		{
+			if (!_disposed)
+			{
+				if (disposing)
+				{
+					sock?.Dispose();
+				}
+
+				_disposed = true;
+			}
 		}
 
 		public ulong getulong(Byte[] data, uint dp)

@@ -1,5 +1,6 @@
 2026-07-26
 
+	* Main.cs (ninep): Types that own disposable fields should be disposable.
 	* Main.cs (ninepexception): Add [Serializable] as this type implements ISerializable.
 	* .gitignore: Added to permanently ignore MonoDevelop parser databases.
 	* 9pc/9pc.pidb: Removed.
